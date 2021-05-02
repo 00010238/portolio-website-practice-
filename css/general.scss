@@ -1,0 +1,322 @@
+:root {
+    --mainColor: rgb(155, 155, 155);
+    --secondaryColor: rgb(44, 44, 44);
+
+    --btnColor: ;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: rgb(155, 155, 155);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    .left-bar {
+        position: relative;
+        background: var(--secondaryColor);
+        padding: 40px;
+
+        .profile {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid rgb(146, 146, 146);
+
+            .imgContainer {
+                position: relative;
+                border-radius: 50%;
+                width: 250px;
+                height: 250px;
+                overflow: hidden;
+                margin-bottom: 20px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h2 {
+                color: #fff;
+                font-weight: 500;
+                font-size: 1.5em;
+                text-transform: uppercase;
+
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-size: 0.7em;
+                    margin-top: 5px;
+                    font-weight: 200;
+                }
+            }
+        }
+
+        .contactInfo {
+            align-items: center;
+            padding: 20px;
+
+            h3 {
+                color: #fff;
+                font-weight: 300;
+                font-size: 2em;
+                margin: 0 20px 10px 0 ;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-left: -15px;
+                color: rgb(175, 175, 175);
+
+                li {
+                    margin-bottom: 10px;
+
+                    .icon {
+                        margin-right: 10px;
+                        color: var(--mainColor);
+                    }
+
+                    .info {
+                        font-size: 1.2em;
+                        color: #fff;
+                        font-weight: 0;
+                        letter-spacing: 0.08em;
+                    }
+                }
+            }
+        }
+
+        .education {
+            align-items: center;
+            padding: 20px;
+
+            h3 {
+                color: #fff;
+                font-weight: 300;
+                font-size: 2em;
+                margin: 0 20px 10px 0 ;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-left: -15px;
+                color: rgb(175, 175, 175);
+                
+                li {
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    span {
+                        margin-bottom: 5px;
+                        color: #fff;
+                        font-weight: 0;
+                        font-size: 1.2em;
+                        letter-spacing: 0.02em;
+                    }
+
+                    .year {
+                        color: var(--mainColor);
+                    }
+                }
+            }
+        }
+
+        .languages {
+            align-items: center;
+            padding: 20px;
+
+            h3 {
+                color: #fff;
+                font-weight: 300;
+                font-size: 2em;
+                margin: 0 20px 10px 0 ;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-left: -15px;
+                color: rgb(175, 175, 175);
+
+                li {
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .langName {
+                        color: #fff;
+                        font-size: 1.2em;
+                        font-weight: 100;
+                        letter-spacing: 0.08em;
+                    }
+
+                    .indicator {
+                        margin-top: 5px;
+                        position: relative;
+                        width: 100%;
+                        height: 5px;
+                        background: #000;
+
+                        div {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            background: var(--mainColor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        position: relative;
+        background: var(--mainColor);
+        padding: 30px;
+
+        #sections {
+            margin-bottom: 40px;
+        }
+
+        .profileSection {
+
+            h2 {
+                color: var(--secondaryColor);
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            .profileParagraph {
+                font-size: 1em;
+                color: var(--secondaryColor);
+                letter-spacing: 0.05em;
+
+                p {
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .experience {
+
+            h2 {
+                color: var(--secondaryColor);
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            .expContainer {
+                display: grid;
+                grid-template-areas: 
+                "year position"
+                "companyName text";
+                grid-gap: 10px;    
+                padding: 5px;
+
+                div {
+                    color: var(--secondaryColor);
+                    margin-right: 20px;
+                    font-size: 1.05em;
+                }
+            }
+            .year {
+                grid-area: year;
+            }
+            .position {
+                grid-area: position;
+            }
+            .companyName {
+                grid-area: companyName;
+            }
+
+            .text {
+                grid-area: text;
+            }
+        }
+
+        .profSkills {
+
+            h2 {
+                color: var(--secondaryColor);
+                font-size: 2em;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+
+            .skills {
+                list-style-type: none;
+
+                li {
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-direction: column;
+
+                    .name {
+                        color: var(--secondaryColor);
+                        font-size: 1.2em;
+                        letter-spacing: 0.08em;
+                    }
+
+                    .indicator {
+                        margin-top: 5px;
+                        width: 100%;
+                        height: 5px;
+                        background: rgb(54, 54, 54);
+
+                        div {
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .interests {
+
+            h2 {
+                color: var(--secondaryColor);
+                font-size: 2em;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                li {
+                    color: var(--secondaryColor);
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
